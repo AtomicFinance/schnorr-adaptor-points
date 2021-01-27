@@ -1,0 +1,49 @@
+{
+  "name": "schnorr-adaptor-points",
+  "version": "0.1.0",
+  "description": "Javascript implementation of schnorr adaptor point scheme",
+  "main": "./src/index.js",
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "scripts": {
+    "coverage-coveralls": "nyc mocha ./test/adaptor-*.spec.js && nyc report --reporter=text-lcov | coveralls",
+    "coverage-html": "nyc report --reporter=html",
+    "coverage": "nyc --check-coverage --branches 85 --functions 90 --lines 90 mocha ./test/adaptor-*.spec.js",
+    "unit": "mocha ./test/adaptor-*.spec.js",
+    "test": "yarn run coverage",
+    "benchmark": "node test/adaptor.benchmark.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/atomicfinance/schnorr-adaptor-points.git"
+  },
+  "keywords": [
+    "adaptor",
+    "point",
+    "schnorr",
+    "elliptic",
+    "curve"
+  ],
+  "author": "Matthew Black <mblackmblackmblack@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/atomicfinance/schnorr-adaptor-points/issues"
+  },
+  "homepage": "https://github.com/atomicfinance/schnorr-adaptor-points#readme",
+  "devDependencies": {
+    "benchmark": "^2.1.4",
+    "coveralls": "^3.1.0",
+    "microtime": "^3.0.0",
+    "mocha": "^6.2.3",
+    "nyc": "^14.1.1"
+  },
+  "dependencies": {
+    "bigi": "^1.4.2",
+    "bip-schnorr": "^0.6.2",
+    "ecurve": "^1.0.6",
+    "js-sha256": "^0.9.0",
+    "randombytes": "^2.1.0",
+    "safe-buffer": "^5.2.1"
+  }
+}
